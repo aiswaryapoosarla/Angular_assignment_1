@@ -1,0 +1,18 @@
+<div class="alert alert-warning mt-2">
+    <u><b>Skills</b></u>
+  </div>
+  
+  <div class="container">
+    <ul class="list-group">
+      <li
+        *ngFor="let skill of skills"
+        class="list-group-item d-flex justify-content-between 
+               align-items-center"
+        (click)="currentSelected = skill.id"
+        [ngStyle]="{ cursor: currentSelected === skill.id ? 'pointer' : '' }"
+        [ngClass]="{ active: currentSelected === skill.id }"
+      >
+        {{ skill.name }}
+      </li>
+    </ul>
+  </div>
